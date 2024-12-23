@@ -27,3 +27,6 @@
 - Concluir e interpretar os resultados do modelo.
 
 Cada etapa é explicada em detalhes dentro do notebook.
+
+## 5. Principais Insights
+#### 5.1 
