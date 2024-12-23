@@ -25,3 +25,5 @@
 - Treinamento de modelos, comparação, seleção de características e ajuste fino;
 - Teste e avaliação do modelo de produção final;
 - Concluir e interpretar os resultados do modelo.
+
+Cada etapa é explicada em detalhes dentro do notebook.
