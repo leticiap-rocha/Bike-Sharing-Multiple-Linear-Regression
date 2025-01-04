@@ -33,6 +33,10 @@ Cada etapa é explicada em detalhes dentro do notebook.
 **Input:** Contém os dados brutos utilizados como entrada <br/>
 **Notebook:** Contém o notebook Jupyter desenvolvido <br/>
 
-## 6. Principais Insights sobre os aluguéis de bicicletas
+## 6. Informações Gerais das variáveis
+
+## 7. Principais Insights sobre os aluguéis de bicicletas
+
+## 8. Modelagem 
 - 
 
