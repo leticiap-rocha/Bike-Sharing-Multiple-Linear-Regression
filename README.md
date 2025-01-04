@@ -28,5 +28,11 @@
 
 Cada etapa é explicada em detalhes dentro do notebook.
 
-## 5. Principais Insights
-#### 5.1 
+## 5. Estrutura do Repositório
+**Imagens:**  Contém as imagens utilizadas neste storytelling <br/>
+**Input:** Contém os dados brutos utilizados como entrada <br/>
+**Notebook:** Contém o notebook Jupyter desenvolvido <br/>
+
+## 6. Principais Insights sobre os aluguéis de bicicletas
+- 
+
