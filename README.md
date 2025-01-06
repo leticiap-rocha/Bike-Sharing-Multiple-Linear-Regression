@@ -33,7 +33,19 @@ Cada etapa é explicada em detalhes dentro do notebook.
 **Input:** Contém os dados brutos utilizados como entrada <br/>
 **Notebook:** Contém o notebook Jupyter desenvolvido <br/>
 
-## 6. Informações Gerais das variáveis
+## 6. Informações Gerais das variáveis utilizadas
+- **season:** Estação do ano (1:primavera; 2:verão; 3:outono; 4:inverno)        
+- **yr:** Ano (0: primeiro ano; 1: segundo ano)            
+- **mnth:** Meses do ano (1 a12)          
+- **holiday:** Feriados (0: Não feriado; 1: feriado)      
+- **weekday:** Dias da semana [0 (domingo) a 6 (sábado)]      
+- **workingday:** Dia útil (0: feriados e finais de semana; 1: dia útil)     
+- **weathersit:** Condição do tempo (1: claro, poucas nuvens; 2: neblina + nuvens; 3: chuva leve + tempestade + nuvens; 4: chuva pesada + gelo + tempestade + neblina)   
+- **temp:** Temperatura em Celsius         
+- **atemp:** Sensação térmica em Celsius        
+- **hum:** Umidade relativa          
+- **windspeed:** Velocidade do vento    
+- **cnt:** Contagem total de bicicletas alugadas
 
 ## 7. Principais Insights sobre os aluguéis de bicicletas
 
