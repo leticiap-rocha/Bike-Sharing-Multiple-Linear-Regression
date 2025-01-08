@@ -49,6 +49,7 @@ Cada etapa é explicada em detalhes dentro do notebook.
 
 ## 7. Principais Insights sobre os aluguéis de bicicletas
 
+
 ## 8. Modelagem 
 - 
 
