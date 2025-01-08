@@ -34,20 +34,31 @@ Cada etapa é explicada em detalhes dentro do notebook.
 **Notebook:** Contém o notebook Jupyter desenvolvido <br/>
 
 ## 6. Informações Gerais das variáveis utilizadas
-- **season:** Estação do ano (1:primavera; 2:verão; 3:outono; 4:inverno)        
-- **yr:** Ano (0: primeiro ano; 1: segundo ano)            
-- **mnth:** Meses do ano (1 a12)          
-- **holiday:** Feriados (0: Não feriado; 1: feriado)      
-- **weekday:** Dias da semana [0 (domingo) a 6 (sábado)]      
-- **workingday:** Dia útil (0: feriados e finais de semana; 1: dia útil)     
-- **weathersit:** Condição do tempo (1: claro, poucas nuvens; 2: neblina + nuvens; 3: chuva leve + tempestade + nuvens; 4: chuva pesada + gelo + tempestade + neblina)   
-- **temp:** Temperatura em Celsius         
-- **atemp:** Sensação térmica em Celsius        
-- **hum:** Umidade relativa          
-- **windspeed:** Velocidade do vento    
-- **cnt:** Contagem total de bicicletas alugadas
+- **Variáveis Numéricas**
+  - **temp:** Temperatura em Celsius         
+  - **atemp:** Sensação térmica em Celsius        
+  - **hum:** Umidade relativa          
+  - **windspeed:** Velocidade do vento    
+  - **cnt:** Contagem total de bicicletas alugadas
+- **Variáveis Categóricas**
+  - **season:** Estação do ano (1:primavera; 2:verão; 3:outono; 4:inverno)        
+  - **yr:** Ano (0: primeiro ano; 1: segundo ano)            
+  - **mnth:** Meses do ano (1 a12)          
+  - **holiday:** Feriados (0: Não feriado; 1: feriado)      
+  - **weekday:** Dias da semana [0 (domingo) a 6 (sábado)]      
+  - **workingday:** Dia útil (0: feriados e finais de semana; 1: dia útil)     
+  - **weathersit:** Condição do tempo (1: claro, poucas nuvens; 2: neblina + nuvens; 3: chuva leve + tempestade + nuvens; 4: chuva pesada + gelo + tempestade + neblina)   
 
 ## 7. Principais Insights sobre os aluguéis de bicicletas
+![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/pairplot%20vari%C3%A1veis%20num%C3%A9ricas.jpg)
+- Sobre as variáveis numéricas, destaca-se:
+    - A distribuição de cada variável individualmente (pelos gráficos KDE na diagonal). As distribuições das variáveis **hum** e **windspeed** aproximam-se de uma normal
+    - É possível notar uma relação linear entre 'temp','atemp' and 'cnt'
+
+- Sobre as variáveis categóricas, destaca-se
+- 'Season' e 'cnt', 'weathersit' e 'cnt', "workingday" x "cnt"
+
+  OBS: Os insights sobre as outras variáveis encontra-se no notebook
 
 
 ## 8. Modelagem 
