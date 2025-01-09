@@ -26,7 +26,7 @@
 - Teste e avaliação do modelo de produção final;
 - Concluir e interpretar os resultados do modelo.
 
-Cada etapa é explicada em detalhes dentro do notebook.
+*Cada etapa é explicada em detalhes dentro do notebook.*
 
 ## 5. Estrutura do Repositório
 **Imagens:**  Contém as imagens utilizadas neste storytelling <br/>
@@ -39,7 +39,7 @@ Cada etapa é explicada em detalhes dentro do notebook.
   - **atemp:** Sensação térmica em Celsius        
   - **hum:** Umidade relativa          
   - **windspeed:** Velocidade do vento    
-  - **cnt:** Contagem total de bicicletas alugadas
+  - **cnt:** Contagem total de bicicletas alugadas (ESTA SERÁ A VARIÁVEL DEPENDENTE)
 - **Variáveis Categóricas**
   - **season:** Estação do ano (1:primavera; 2:verão; 3:outono; 4:inverno)        
   - **yr:** Ano (0: primeiro ano; 1: segundo ano)            
@@ -50,15 +50,40 @@ Cada etapa é explicada em detalhes dentro do notebook.
   - **weathersit:** Condição do tempo (1: claro, poucas nuvens; 2: neblina + nuvens; 3: chuva leve + tempestade + nuvens; 4: chuva pesada + gelo + tempestade + neblina)   
 
 ## 7. Principais Insights sobre os aluguéis de bicicletas
+
+**Sobre as variáveis numéricas, destaca-se:**
 ![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/pairplot%20vari%C3%A1veis%20num%C3%A9ricas.jpg)
-- Sobre as variáveis numéricas, destaca-se:
     - A distribuição de cada variável individualmente (pelos gráficos KDE na diagonal). As distribuições das variáveis **hum** e **windspeed** aproximam-se de uma normal
-    - É possível notar uma relação linear entre 'temp','atemp' and 'cnt'
+    - É possível notar uma relação linear entre 'temp','atemp' e 'cnt'
 
-- Sobre as variáveis categóricas, destaca-se
-- 'Season' e 'cnt', 'weathersit' e 'cnt', "workingday" x "cnt"
+**Sobre as variáveis categóricas, destaca-se:**
 
-  OBS: Os insights sobre as outras variáveis encontra-se no notebook
+*Considerando a variável 'Season' em relação à 'cnt':* <br/>
+![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/Season%20x%20Cnt.jpg)
+
+  - A mediana dos alugueis varia consideravelmente entre as estações. A menor é na "season 1" (cerca de 2.000) e a maior na "season3"(acima de 5.000)
+  - A "season 1" possui a maior amplitude interquartil (altura da caixa), que sugere maior variabilidade nos alugueis
+  - Há outliers na "season 1" e "season 4"
+  - As observaações sugerem que as estações do ano afetam fortemente o comportamento dos usuários em relação ao aluguel de bibicleta, com um pico de demanda no verão e menor atividade no inverno.
+
+*Considerando a variável 'Weathersit' em relação à 'cnt':*
+![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/Weathersit%20x%20cnt.jpg) <br/>
+
+ - A mediana de aluguéis varia substancialmente entre as diferentes condições climáticas. Isso indica que a situação climática é um forte preditor do comportamento de aluguel
+ - O maior número de aluguéis ocorre na condição climática 1. A mediana está próxima e 5.000 e os valores variam amplamente, chegando a um máximo de cerca de 9.000. Indicando que dias ensolarados ou com poucas nuvens são os mais favoráveis para usuários alugarem bicicletas.
+ - Na condição climática 2, a mediana dos aluguéis cai para cerca de 4.000. A distriuição ainda é razoavelmente ampla, mas o número de aluguéis geralmente menor que da condição climática 1. Indica que, embora condições levemente desfavoráveis (como céu nublado) reduzem a demanda, o impacto não é tão drástico quanto em condições de chuva.
+ - Para a condição climática 3, a mediana despenca para cerca de 2.000. Além disso, a faixa interquartil é bem mais compacta, sugerindo uma menor variabilidade no número de aluguéis. Indica que em dias de chuva ou neve, a maioria dos usuários tendem a evitar o uso das bicicletas, resultando em um número consistentemente baixo de aluguéis
+ - Esta variável impacta fortemente a demanda por bicicletas
+
+*Considerando a variável 'Workingday' em relação à 'cnt':*
+![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/workingday%20x%20cnt.jpg)
+
+  - A mediana para ambos os grupos é muito próxima, por volta de 4.000 aluguéis. Isso sugere que a demanda mediana por bicicletas é relativamente constante, independente de ser dia útil ou não
+  - A caixa azul (não-dia útil) é um pouco maior que a laranja (dia útil), indicando que há maior variabilidade na demanda em dias não úteis. Isso pode ocorrer porque o uso nos fins de semana e feriados tende a ser mais imprevisível e influenciado por fatores como eventos e climas. Em dias úteis, a demana é um pouco mais consistente, possivelmetne devido ao uso regular para deslocamentos diários
+  - Os bigodes são quase identicos para os dois grupos, sugerindo que os valores máximos e mínimos são semelhantes em ambos os senários
+  - A variável workingday parece ser relevante para a previsão de demanda, pois afeta a consistência e previsibilidade dos aluguéis. No entanto, como as medidas são muito próximas, esta variável por si só pode não ser suficiente para prever grandes diferenças na demanda. Por isso, é importante combiná-la com outras variáveis de forma a capturar padrões mais complexos
+
+*OBS: Os insights sobre as outras variáveis encontram-se no notebook*
 
 
 ## 8. Modelagem 
