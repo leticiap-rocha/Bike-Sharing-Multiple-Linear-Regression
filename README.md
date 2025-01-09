@@ -58,7 +58,8 @@
 
 **Sobre as variáveis categóricas, destaca-se:**
 
-*Considerando a variável 'Season' em relação à 'cnt':* <br/>
+*Considerando a variável 'Season' em relação à 'cnt':*
+
 ![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/Season%20x%20Cnt.jpg)
 
   - A mediana dos alugueis varia consideravelmente entre as estações. A menor é na "season 1" (cerca de 2.000) e a maior na "season3"(acima de 5.000)
@@ -67,7 +68,8 @@
   - As observaações sugerem que as estações do ano afetam fortemente o comportamento dos usuários em relação ao aluguel de bibicleta, com um pico de demanda no verão e menor atividade no inverno.
 
 *Considerando a variável 'Weathersit' em relação à 'cnt':*
-![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/Weathersit%20x%20cnt.jpg) <br/>
+
+![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/Weathersit%20x%20cnt.jpg) 
 
  - A mediana de aluguéis varia substancialmente entre as diferentes condições climáticas. Isso indica que a situação climática é um forte preditor do comportamento de aluguel
  - O maior número de aluguéis ocorre na condição climática 1. A mediana está próxima e 5.000 e os valores variam amplamente, chegando a um máximo de cerca de 9.000. Indicando que dias ensolarados ou com poucas nuvens são os mais favoráveis para usuários alugarem bicicletas.
@@ -76,6 +78,7 @@
  - Esta variável impacta fortemente a demanda por bicicletas
 
 *Considerando a variável 'Workingday' em relação à 'cnt':*
+
 ![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/workingday%20x%20cnt.jpg)
 
   - A mediana para ambos os grupos é muito próxima, por volta de 4.000 aluguéis. Isso sugere que a demanda mediana por bicicletas é relativamente constante, independente de ser dia útil ou não
