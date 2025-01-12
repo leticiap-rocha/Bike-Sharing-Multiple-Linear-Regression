@@ -117,6 +117,8 @@
     - VIF > 5: Indica uma correlação potencialmente preocupante, podendo haver multicolinearidade;
     - VIF > 10: Multicolinearidade severa, indicando que a variável i está altamente correlacionada com outras variáveis e deve ser investigada ou removida.
 - Modelo linear usando 'STATS MODEL":
-  - O Modelo 1 foi 
-
+   - Os modelos de regressão foram criados utilizando o método de Mínimos Quadrados Ordinários (OLS - Ordinary Least Squares);
+   - Após construção do modelo 1, foram avaliados os resultados do p-value e VIF;
+   - Resulados do VIF - Modelo1:
+       
 
