@@ -119,17 +119,28 @@
 - Modelo linear usando 'STATS MODEL":
    - Os modelos de regressão foram criados utilizando o método de Mínimos Quadrados Ordinários (OLS - Ordinary Least Squares);
    - Após construção do modelo 1, foram avaliados os resultados do valor p e VIF;
-   - Resulados do VIF - Modelo 1:
-   - Relatório de Regressão - Modelo 1:
+   - Resultados do VIF - Modelo 1:
+
+![VIF do modelo 1](https://github.com/user-attachments/assets/851a330d-46b9-43a5-9c4b-a65b168a0beb)
+
+  - Relatório de Regressão - Modelo 1:
+
+![Relatório Regressão do modelo 1](https://github.com/user-attachments/assets/eed64980-6527-41af-bd1c-c20706a21c83)
    - Considerando o alto p-value e no alto VIF, foi removida a variável 'atemp' antes da criação do modelo 2;
    - Para o modelo 3 foi removida a variável 'hum', baseando-se em seu alto valor VIF;
    - Para o modelo 4 foi removida a variável 'season3' baseando-se em seu alto valor VIF;
    - Para o modelo 5 foi removida a variável  'mnth_10' baseando-se em seu alto valor p;
    - Para o modelo 6 foi removida a variável  'mnth_3' baseando-se em seu alto valor p;
    - O modelo 6 foi o último modelo, e considerado bom já que Todos os VIF são maiores que 1 e menores que 5.
-   - Resulados do VIF - Modelo 6:
+
+    - Resulados do VIF - Modelo 6:
+
+![VIF do Modelo 6](https://github.com/user-attachments/assets/d3b43fea-e15b-4f25-979b-c617ddb9f5a2)
+
    - Relatório de Regressão - Modelo 6:
-  
+
+![Relatório Regressão modelo 6](https://github.com/user-attachments/assets/c9fafe1f-6465-47bb-84a2-4295a17018a9)
+
   #### 4. Interpretação do Modelo Final
 - De acordo com o Teste de hipóteses, como nenhum coeficiente=0, rejeitou-se a hipótese nula;
 - Foi utilizado o F-Statistics  para testar a significância geral do modelo (quanto maior o F-Statistics, maior é a significância do modelo). O valor de 233 (muito maior que 1) do F-Statistics e o p-valor de '~0.0000' afirma que no geral o modelo é significante.
@@ -140,4 +151,34 @@
     - **weathersit_3:** Um valor de coeficiente de “-0,3070” indica que, em relação a Weathersit1, um aumento de uma unidade na variável Weathersit3 diminui o número de aluguel de bicicletas em 0,3070 unidades.
     - **const:** O valor constante de '0,084143' indicou que, na ausência de todas as outras variáveis preditoras (ou seja, quando x1,x2...xn =0), o aluguel de bicicletas ainda pode aumentar em 0,084143 unidades.
 - Análise Residual dos dados de treinamento:
+![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/An%C3%A1lise%20dos%20res%C3%ADduos.jpg)
+- Os resíduos são normalmente distribuídos. Portanto, a suposição de regressão linear é válida.
+- Relação Linear entre X e Y:
+![Relação Linear entre X e Y](https://github.com/user-attachments/assets/6fb4c4c9-31f1-4665-a274-42e76c638058)
+- Há uma relação linear entre as variáveis temp e atemp com o preditor 'cnt'.
+- Não Multicolinearudade entre as variáveis preditoras:
+![image](https://github.com/user-attachments/assets/861b53c6-5154-4540-94db-739a1acac9ab)
+- A partir do cálculo do VIF, constatamos que não há multicolinearidade entre as variáveis preditoras, pois todos os valores estão dentro da faixa permitida de menos de 5.
 
+#### 5. Previsões usando o modelo final
+- Após os ajustes e checagem das pressuposições do modelo 6, iniciou-se as previsões com este modelo.
+- Aplicou-se o dimensionamento nos conjuntos de teste:
+  - Foi utilizado o scaler() a todas as variáveis numéricas no conjunto de dados de teste;
+  - Usou-se apenas scaler.transform para usar as métricas que o modelo aprendeu com os dados de treinamento a serem aplicados nos dados de teste. Dessa forma, buscou-se evitar o vazamento de informações do conjunto de dados de treinamento para o de teste.
+![y_test e y_pred](https://github.com/user-attachments/assets/50ff918f-9fbf-4d3e-8de4-89f6472b8d9c)
+- Comparação dos resultados finais:
+  - R² treino: 0.824
+  - R² treino ajustado: 0.821
+  - R² test: 0.820
+  - R² ajustado: 0.812
+  - Os valores indicaram que parece ser um modelo muito bom que pode generalizar muito bem vários conjuntos de dados
+
+## 9. Relatório final
+- De acordo com o nosso modelo final (modelo 6), as 3 principais variáveis de previsão que influenciam a reserva de bicicletas são:
+    - **Temperatura (temp):*** Um valor de coeficiente de '0,5636' indica que um aumento unitário na variável temp aumenta o número de aluguel de bicicletas em 0,5636 unidades.
+    - **Situação meteorológica 3 (weathersit_3):** Um valor de coeficiente de '-0,3070' indica que, em relação a Weathersit1, um aumento unitário na variável Weathersit3 diminui o número de aluguel de bicicletas em 0,3070 unidades.
+    - **Ano (yr):** Um valor de coeficiente de “0,2308” indica que um aumento unitário na variável yr aumenta o número de aluguer de bicicletas em 0,2308 unidades.
+- Sugere-se que considere essas 3 variáveis de extrema importância durante o planejamento, para atingir o máximo de aluguéis.
+- As próximas melhores caraterísticas que também podem ser consideradas são:
+    - **season_4:** Um valor de coeficiente de “0,128744” indica que, em relação à época_1, um aumento unitário na variável época_4 aumenta o número de aluguel de bicicletas em 0,128744 unidades.
+    - **windspeed: Um valor de coeficiente de '-0,155191' indica que, um aumento unitário na variável velocidade do vento diminui o número de aluguel de bicicletas em 0,155191 unidades.
