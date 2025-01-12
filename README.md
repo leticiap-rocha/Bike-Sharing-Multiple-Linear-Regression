@@ -90,5 +90,33 @@
 
 
 ## 8. Modelagem 
-- 
+#### 1. Limpeza dos dados:
+- Foi checada a existência de dados nulos, faltantes e duplicados;
+- Foram removidas as colunas redundantes e indesejadas (instant, dteday, casual e registered).
+
+#### 2. Redimensionamento dos recursos:
+- Foram criadas variáveis Dummy's para 4 categorias: 'mnth', 'weekday', 'season' & 'weathersit', transformando-as de variáveis categóricas para numéricas;
+- Divisão dos dados em treino e teste na proporção 70/30;
+- Ajuste dos valores de treino utilizando o MinMaxScaler() para que fiquem dentro de uma determinada faixa (entre 0 e 1).
+
+#### 3. Construção do Modelo Linear
+- Os dados foram divididos em X e Y. A variávei "cnt" é a dependente, portanto o Y e as demais variáveis são X;
+- Recursive Feature Elimination - RFE:
+  - Foi utilizada a funçao LinearRegression do Scikit Learn por sua compatibilidade com o RFE
+  - O RFE é uma técnica de seleção de características (ou variáveis) usada em Machine Learning para escolher as características mais importantes de um conjunto de dados;
+  - O objetivo do RFE é reduzir o número de variáveis utilizadas no modelo, mantendo o desempenho ou até melhorando-o, eliminando características irrelevantes ou redundantes;
+  - O processo de RFE envolve recursivamente treinar o modelo, avaliando a importância das características e eliminando as menos importantes até que o número desejado de características seja atingido;
+  - Foi utilizado o rfe.ranking, um atributo do RFE após o ajuste, que fornece o ranking de importancia das features(1 mais importantes). Quanto maior o número, menos relevante a feature foi considerada.
+- VIF Check:
+  - O VIF check refere-se ao cálculo do Variance Inflation Factor (VIF);
+  - É usado para verificar a presença de multicolinearidade entre as variáveis independentes em um modelo de regressão;
+  - Multicolinearidade ocorre quando duas ou mais variáveis explicativas estão altamente correlacionadas, o que pode distorcer os coeficientes do modelo e dificultar a interpretação dos resultados;
+  - Interpretação:
+    - VIF = 1: Não há correlação entre a variável i e as outras variáveis independentes;
+    - 1 < VIF < 5: Existe uma correlação moderada, mas geralmente não é problemática;
+    - VIF > 5: Indica uma correlação potencialmente preocupante, podendo haver multicolinearidade;
+    - VIF > 10: Multicolinearidade severa, indicando que a variável i está altamente correlacionada com outras variáveis e deve ser investigada ou removida.
+- Modelo linear usando 'STATS MODEL":
+  - O Modelo 1 foi 
+
 
