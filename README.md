@@ -118,7 +118,26 @@
     - VIF > 10: Multicolinearidade severa, indicando que a variável i está altamente correlacionada com outras variáveis e deve ser investigada ou removida.
 - Modelo linear usando 'STATS MODEL":
    - Os modelos de regressão foram criados utilizando o método de Mínimos Quadrados Ordinários (OLS - Ordinary Least Squares);
-   - Após construção do modelo 1, foram avaliados os resultados do p-value e VIF;
-   - Resulados do VIF - Modelo1:
-       
+   - Após construção do modelo 1, foram avaliados os resultados do valor p e VIF;
+   - Resulados do VIF - Modelo 1:
+   - Relatório de Regressão - Modelo 1:
+   - Considerando o alto p-value e no alto VIF, foi removida a variável 'atemp' antes da criação do modelo 2;
+   - Para o modelo 3 foi removida a variável 'hum', baseando-se em seu alto valor VIF;
+   - Para o modelo 4 foi removida a variável 'season3' baseando-se em seu alto valor VIF;
+   - Para o modelo 5 foi removida a variável  'mnth_10' baseando-se em seu alto valor p;
+   - Para o modelo 6 foi removida a variável  'mnth_3' baseando-se em seu alto valor p;
+   - O modelo 6 foi o último modelo, e considerado bom já que Todos os VIF são maiores que 1 e menores que 5.
+   - Resulados do VIF - Modelo 6:
+   - Relatório de Regressão - Modelo 6:
+  
+  #### 4. Interpretação do Modelo Final
+- De acordo com o Teste de hipóteses, como nenhum coeficiente=0, rejeitou-se a hipótese nula;
+- Foi utilizado o F-Statistics  para testar a significância geral do modelo (quanto maior o F-Statistics, maior é a significância do modelo). O valor de 233 (muito maior que 1) do F-Statistics e o p-valor de '~0.0000' afirma que no geral o modelo é significante.
+- A equação da superfície mais bem ajustada com base no modelo 6:
+   - cnt = 0.084143 + (yr × 0.230846) + (workingday × 0.043203) + (temp × 0.563615) − (windspeed × 0.155191) + (season2 × 0.082706) + (season4 ×0.128744) + (mnth9 × 0.094743) + (weekday6 ×0.056909) − (weathersit2 × 0.074807) − (weathersit3 × 0.306992)
+- Interpretação de alguns coeficientes:
+    - **temp:** Um valor de coeficiente de “0,5636” indicou que um aumento unitário na variável temp aumenta o número de aluguel de bicicletas em 0,5636 unidades.
+    - **weathersit_3:** Um valor de coeficiente de “-0,3070” indica que, em relação a Weathersit1, um aumento de uma unidade na variável Weathersit3 diminui o número de aluguel de bicicletas em 0,3070 unidades.
+    - **const:** O valor constante de '0,084143' indicou que, na ausência de todas as outras variáveis preditoras (ou seja, quando x1,x2...xn =0), o aluguel de bicicletas ainda pode aumentar em 0,084143 unidades.
+- Análise Residual dos dados de treinamento:
 
