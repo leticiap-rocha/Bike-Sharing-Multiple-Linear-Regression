@@ -155,10 +155,15 @@
 ![image](https://github.com/leticiap-rocha/Bike-Sharing-Multiple-Linear-Regression/blob/main/Imagens/An%C3%A1lise%20dos%20res%C3%ADduos.jpg)
 - Os resíduos são normalmente distribuídos. Portanto, a suposição de regressão linear é válida.
 - Relação Linear entre X e Y:
+
 ![Relação Linear entre X e Y](https://github.com/user-attachments/assets/6fb4c4c9-31f1-4665-a274-42e76c638058)
+
 - Há uma relação linear entre as variáveis temp e atemp com o preditor 'cnt'.
+
 - Análise da Multicolinearudade entre as variáveis preditoras:
+
 ![image](https://github.com/user-attachments/assets/861b53c6-5154-4540-94db-739a1acac9ab)
+
 - A partir do cálculo do VIF, constatamos que não há multicolinearidade entre as variáveis preditoras, pois todos os valores estão dentro da faixa permitida (menores que 5).
 
 #### 5. Previsões usando o modelo final
